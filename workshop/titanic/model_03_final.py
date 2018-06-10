@@ -9,6 +9,8 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 
+from matplotlib import pyplot as plt
+
 def process_with_ticket(data):
     data.drop('Ticket', inplace=True, axis=1)
     return data
@@ -134,6 +136,22 @@ def try_to_tuning(data, survived):
     print('Best score: {}'.format(grid_search.best_score_))
     print('Best parameters: {}'.format(grid_search.best_params_))
 
+def selection_features(data, survived):
+    training_data = data.iloc[:891].copy()
+    testing_data = data.iloc[891:].copy()
+    model = RandomForestClassifier(n_estimators=50, max_features='sqrt')
+    model = model.fit(training_data, survived)
+
+    features = pd.DataFrame()
+    features['feature'] = training_data.columns
+    features['importance'] = model.feature_importances_
+    features.sort_values(by=['importance'], ascending=True, inplace=True)
+    features.set_index('feature', inplace=True)
+    matplotlib.use('Agg')
+    fig = features.plot(kind='barh', figsize=(25, 25)).get_figure()
+    fig.savefig('test.png')
+
+
 def create_model(data, survived):
     training_data = data.iloc[:891].copy()
     testing_data = data.iloc[891:].copy()
@@ -167,7 +185,8 @@ if __name__== "__main__":
     data = process_with_pclass(data)
     data = process_with_family(data)
     data = process_with_ticket(data)
-    try_to_tuning(data, survived)
+    selection_features(data, survived)
+    # try_to_tuning(data, survived)
     # prediction_results = create_model(data, survived)
     # create_file_for_summission(prediction_results, "06.csv")
     print('Process is done.')

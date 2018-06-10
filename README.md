@@ -4,10 +4,10 @@
 * [x] Python => List comprehensive
 * [x] Data Science processes
 * Data Science Libraries
-   * [ ] [Pandas](https://pandas.pydata.org/)
-   * [ ] [Matplotlib](https://matplotlib.org/)
-   * [ ] [Seaborn](https://seaborn.pydata.org/)
-   * [ ] [Scikit-learn](http://scikit-learn.org/)
+   * [x] [Pandas](https://pandas.pydata.org/)
+   * [x] [Matplotlib](https://matplotlib.org/)
+   * [x] [Seaborn](https://seaborn.pydata.org/)
+   * [x] [Scikit-learn](http://scikit-learn.org/)
 * [Kaggle](https://www.kaggle.com/) => Your Home for Data Science
    * [x] Introduction
    * [x] How to submit result to Kaggle ?

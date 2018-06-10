@@ -1,6 +1,8 @@
 # Course Python for Data Science
 
+## Day 1
 * [x] List of tools
+* [x] Introduction to Python
 * [x] Python => List comprehensive
 * [x] Data Science processes
 * Data Science Libraries
@@ -11,6 +13,8 @@
 * [Kaggle](https://www.kaggle.com/) => Your Home for Data Science
    * [x] Introduction
    * [x] How to submit result to Kaggle ?
+   
+## Day 2
 * Lab and Workshop with [Titanic dataset](https://www.kaggle.com/c/titanic)
   * [x] Project Euler with Python
   * [ ] Web Scraping

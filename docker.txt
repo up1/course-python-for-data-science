@@ -1,1 +1,2 @@
-docker container run -d -p 8888:8888 -v $(pwd):/home/jovyan/work jupyter/datascience-notebook start-notebook.sh --NotebookApp.base_url=/workshop/
+docker container run --rm -p 8888:8888 -v $(pwd):/home/jovyan/work jupyter/datascience-notebook start-notebook.sh --NotebookApp.base_url=/workshop/
+docker container run --rm -p 8889:8888  -v $(pwd):/home/jovyan/work jupyter/pyspark-notebook

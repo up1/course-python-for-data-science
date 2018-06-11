@@ -157,7 +157,8 @@ def create_model(data, survived):
     testing_data = data.iloc[891:].copy()
 
     parameters = {'bootstrap': False, 'max_depth': 8, 'max_features': 'log2', 'min_samples_leaf': 3, 'min_samples_split': 3, 'n_estimators': 10}
-    model = SVC(kernel="linear", C=0.025)
+    # model = SVC(kernel="linear", C=0.025)
+    model = RandomForestClassifier(n_estimators=100)
 
     value = cross_val_score(model, training_data, survived, cv=5, scoring='accuracy')
     print(np.mean(value))
@@ -185,8 +186,8 @@ if __name__== "__main__":
     data = process_with_pclass(data)
     data = process_with_family(data)
     data = process_with_ticket(data)
-    selection_features(data, survived)
+    # selection_features(data, survived)
     # try_to_tuning(data, survived)
-    # prediction_results = create_model(data, survived)
-    # create_file_for_summission(prediction_results, "06.csv")
+    prediction_results = create_model(data, survived)
+    create_file_for_summission(prediction_results, "07.csv")
     print('Process is done.')

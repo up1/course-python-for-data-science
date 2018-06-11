@@ -28,8 +28,8 @@
     * [x] Feature selection
     * [x] Comparing model with multi-algorithms
     * [x] Tuning paramters (hyperparameter)   
-* [ ] Working with [Apache Spark](https://spark.apache.org/)
-  * [ ] Installation
-  * [ ] Working with Jupyter notebook
-  * [ ] Workshop with Data
+* Working with [Apache Spark](https://spark.apache.org/)
+  * [x] Installation
+  * [x] Working with Jupyter notebook
+  * [x] Workshop with Data
 
